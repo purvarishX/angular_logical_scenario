@@ -1,0 +1,204 @@
+<div class="container">
+    <!-- <div class="row pt-2">
+        <div [ngClass]="isPanelOpen()? 'col-8' : 'col-12'">
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <div class="row">
+                        <div class="col-6">
+                            User List
+                        </div>
+                        <div class="col-6 text-end">
+                            <button class="btn btn-success" (click)="addNew()">Add New</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Sr No.</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Username</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Purva</td>
+                                        <td>p@gmail.com</td>
+                                        <td>purvazzz</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Gaurav</td>
+                                        <td>g@gmail.com</td>
+                                        <td>gauravx</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Pavithra</td>
+                                        <td>pra@yahoo.com</td>
+                                        <td>praviX</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Ashish</td>
+                                        <td>A@gmail.com</td>
+                                        <td>AshishD</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (isPanelOpen()) {
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <div class="row">
+                        <div class="col-6">
+                            New User
+                        </div>
+                        <div class="col-6 text-end">
+                            <button class="btn btn-success mr-4" (click)="save()">Save</button>
+                            <button class="btn btn-danger" (click)="close()">Close</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <label>Name</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-6">
+                            <label>User Name</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label>Email</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-6">
+                            <label>Password</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div> -->
+
+    <hr>
+    <hr>
+    <div class="row pt-2">
+        <!-- @if (isPanelOpenSecond()) { -->
+        @if(view() === 'List') {
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <div class="row">
+                        <div class="col-6">
+                            User List
+                        </div>
+                        <div class="col-6 text-end">
+                            <!-- <button class="btn btn-success" (click)="addNew()">Add New</button> -->
+                            <button class="btn btn-success" (click)="toggleView()">Add New</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Sr No.</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Username</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Purva</td>
+                                        <td>p@gmail.com</td>
+                                        <td>purvazzz</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Gaurav</td>
+                                        <td>g@gmail.com</td>
+                                        <td>gauravx</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Pavithra</td>
+                                        <td>pra@yahoo.com</td>
+                                        <td>praviX</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Ashish</td>
+                                        <td>A@gmail.com</td>
+                                        <td>AshishD</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        } @else {
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <div class="row">
+                        <div class="col-6">
+                            New User
+                        </div>
+                        <div class="col-6 text-end">
+                            <!-- <button class="btn btn-success mr-4" (click)="save()">Save</button>
+                            <button class="btn btn-danger" (click)="close()">Close</button> -->
+                            <button class="btn btn-success mr-4" (click)="toggleView()">Save</button>
+                            <button class="btn btn-danger" (click)="toggleView()">Close</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <label>Name</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-6">
+                            <label>User Name</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label>Email</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="col-6">
+                            <label>Password</label>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
